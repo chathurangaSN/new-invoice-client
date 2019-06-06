@@ -11,5 +11,8 @@ export class LoyaltyComponent implements OnInit {
 
   ngOnInit() {
   }
+  submitCustomerDetail() {
+    console.log("in submitEntry");
+  }
 
 }
