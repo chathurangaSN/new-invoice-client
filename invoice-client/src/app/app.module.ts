@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +10,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { HomeComponent } from './home/home.component';
 import { LoyaltyComponent } from './loyalty/loyalty.component';
 import { InvoiceComponent } from './invoice/invoice.component';
+import { ReactiveComponent } from './reactive/reactive.component';
+import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
+
 
 @NgModule({
   declarations: [
@@ -17,12 +21,15 @@ import { InvoiceComponent } from './invoice/invoice.component';
     SidebarComponent,
     HomeComponent,
     LoyaltyComponent,
-    InvoiceComponent
+    InvoiceComponent,
+    ReactiveComponent,
+    ProfileEditorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

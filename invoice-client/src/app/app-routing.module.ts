@@ -6,6 +6,7 @@ import { LoyaltyComponent } from './loyalty/loyalty.component';
 import { InvoiceComponent } from './invoice/invoice.component';
 
 const routes: Routes = [
+  { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'loyalty', component: LoyaltyComponent },
   { path: 'invoice', component: InvoiceComponent} 

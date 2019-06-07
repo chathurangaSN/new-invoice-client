@@ -1,9 +1,10 @@
-<form class="form-inline">
+<!-- entry form -->
+<!-- <form class="form-inline">
   <div class="form-group mb-2">
     <label for="itemcode" class="sr-only">Item Code: </label>
     <select class="form-control" id="itemcode">
-      <option *ngFor="let item of itemList" [value]="item">
-        {{item.id}} {{item.name}} {{item.rate}} {{item.dis}}
+      <option *ngFor="let item of itemList">
+        {{item.id}}
       </option>
     </select>
   </div>
@@ -27,7 +28,8 @@
     <input type="text" class="form-control" id="" placeholder="qty">
   </div>
   <button type="submit" class="btn btn-primary mb-2">Enter</button>
-</form>
+</form> -->
+<!-- item list table -->
 <table class="table table-sm">
   <thead>
     <tr>
@@ -43,25 +45,21 @@
   </thead>
   <tbody>
     <tr>
-      <th scope="row">{{entry.id}}</th>1
-      <td colspan="2">{{entry.id}}</td>
-      <td>{{entry.qty}}</td>
-      <td>{{entry.rate}}</td>
-      <td>{{entry.gross}}</td>
-      <td>{{entry.dis}}</td>
-      <td>{{entry.net}}</td>
+      <th scope="row">id</th>1
+      <td colspan="2">name</td>
+      <td>qty</td>
+      <td>rate</td>
+      <td>entry.gross</td>
+      <td>entry.dis</td>
+      <td>entry.net</td>
     </tr>
 
   </tbody>
 </table>
-<!-- <div class="card">
-    <div class="card-body">
-      This is some text within a <b>bill</b> body.
-    </div>
-  </div> -->
+<!-- loyalty readonly form -->
 <div class="row">
-
-  <div class="col-6">
+  <!-- loyalty readonly form -->
+  <!-- <div class="col-6">
     <form class="loyalty-form">
       <div class="form-group row">
         <label for="colFormLabelSm" class="col-sm-6 col-form-label col-form-label-sm text-right">Customer ID:</label>
@@ -90,8 +88,9 @@
         <p>A Privilage Member would have earned <span style="color:red;">7</span> points... <b>REGISTER NOW !!!</b></p>
       </div>
     </div>
-  </div>
-  <div class="col-6">
+  </div> -->
+  <!-- invoice bill form -->
+  <!-- <div class="col-6">
     <form class="bill-form">
       <div class="form-group row">
         <label for="grossAmt" class="col-sm-6 col-form-label-sm text-right">GROSS AMT:</label>
@@ -129,5 +128,5 @@
       </div>
     </form>
 
-  </div>
+  </div> -->
 </div>
