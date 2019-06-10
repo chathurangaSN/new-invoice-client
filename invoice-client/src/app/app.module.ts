@@ -12,7 +12,10 @@ import { LoyaltyComponent } from './loyalty/loyalty.component';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { ReactiveComponent } from './reactive/reactive.component';
 import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
-
+import { ParentComponent } from './parent/parent.component';
+import { Child2Component } from './parent/child2/child2.component';
+import { ChildComponent } from './parent/child/child.component';
+import { SonComponent } from './parent/son/son.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,11 @@ import { ProfileEditorComponent } from './profile-editor/profile-editor.componen
     LoyaltyComponent,
     InvoiceComponent,
     ReactiveComponent,
-    ProfileEditorComponent
+    ProfileEditorComponent,
+    ParentComponent,
+    ChildComponent,
+    Child2Component,
+    SonComponent
   ],
   imports: [
     BrowserModule,

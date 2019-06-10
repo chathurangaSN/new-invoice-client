@@ -1,13 +1,75 @@
-<form [formGroup]="profileForm">
-  
+<form [formGroup]="entryForm" (ngSubmit)="onSubmit()">
+
+  <label>
+    First Name:
+    <input type="text" formControlName="firstName" required>
+  </label>
+
+  <label>
+    Last Name:
+    <input type="text" formControlName="lastName">
+  </label>
+
+  <div formGroupName="address">
+    <h3>Address</h3>
+
     <label>
-      First Name:
-      <input type="text" formControlName="firstName">
+      Street:
+      <input type="text" formControlName="street">
     </label>
-  
+
     <label>
-      Last Name:
-      <input type="text" formControlName="lastName">
+      City:
+      <input type="text" formControlName="city">
     </label>
-  
-  </form>
+
+    <label>
+      State:
+      <input type="text" formControlName="state">
+    </label>
+
+    <label>
+      Zip Code:
+      <select formControlName="zip">
+        <option *ngFor="let zip of zips; let i = index" [ngValue]="zip">{{i}}{{zip.id}}</option>
+       <!-- <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+  -->
+      </select>
+    </label>
+
+  </div>
+
+  <button type="submit" [disabled]="!entryForm.valid">Submit</button>
+
+  <button (click)="updateEntry()">Update Entry</button>
+
+</form>
+<p>
+    Form Status: {{ entryForm.status }}
+  </p>
+<div>
+    <p>{{entryForm.value|json}}</p>
+  </div>
+
+<h6>this for data send back as an array</h6>
+<ul>
+  <li *ngFor="let entry of entries">{{entry.firstName}}</li>
+</ul>
+
+<div>
+  <p>{{entryForm.value.address.street}}</p>
+  <p>{{entryForm.value.address.city}}</p>
+  <p>{{entryForm.value.address.state}}</p>
+  <p>{{entryForm.value.address.zip.name}}</p>
+</div>
+
+<div>
+  <ol>
+    <h6>this is for loop2</h6>
+    <li *ngFor="let item of items">
+      {{item}}
+    </li>
+  </ol>
+</div>

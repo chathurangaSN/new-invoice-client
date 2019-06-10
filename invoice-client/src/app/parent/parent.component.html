@@ -1,0 +1,4 @@
+<h2>In Parent</h2>
+<p>Message from son: {{message2}}</p>
+<app-child [message]="message1"></app-child>
+<app-son (messageEvent)="receiveMessge($event)"></app-son>

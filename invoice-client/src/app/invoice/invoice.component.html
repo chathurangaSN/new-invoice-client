@@ -1,34 +1,17 @@
 <!-- entry form -->
-<!-- <form class="form-inline">
+<form [formGroup]="entryForm" (ngSubmit)="submitEntry()" class="form-inline">
   <div class="form-group mb-2">
     <label for="itemcode" class="sr-only">Item Code: </label>
-    <select class="form-control" id="itemcode">
-      <option *ngFor="let item of itemList">
-        {{item.id}}
-      </option>
+    <select formControlName="item" class="form-control" id="itemcode">
+      <option [ngValue]="item" *ngFor="let item of itemList;let i = index">{{i}}-{{item.id}}</option>
     </select>
-  </div>
-
-  <div style="display:none">
-    <div class="form-group mx-sm-3 mb-2">
-      <label for="itemname" class="sr-only">itemname</label>
-      <input type="text" readonly class="form-control" id="itemname" value="itemname">
-    </div>
-    <div class="form-group mx-sm-3 mb-2">
-      <label for="itemrate" class="sr-only">itemrate</label>
-      <input type="text" readonly class="form-control" id="itemrate" value="itemrate">
-    </div>
-    <div class="form-group mx-sm-3 mb-2">
-      <label for="itemdis" class="sr-only">itemdis</label>
-      <input type="text" readonly class="form-control" id="itemdis" value="itemdis">
-    </div>
   </div>
   <div class="form-group mx-sm-3 mb-2">
     <label for="qty" class="sr-only">Qty</label>
-    <input type="text" class="form-control" id="" placeholder="qty">
+    <input formControlName="qty" type="text" class="form-control" id="" placeholder="qty">
   </div>
-  <button type="submit" class="btn btn-primary mb-2">Enter</button>
-</form> -->
+  <button type="submit" [disabled]="!entryForm.valid" class="btn btn-primary mb-2">Enter</button>
+</form>
 <!-- item list table -->
 <table class="table table-sm">
   <thead>
@@ -45,13 +28,13 @@
   </thead>
   <tbody>
     <tr>
-      <th scope="row">id</th>1
-      <td colspan="2">name</td>
-      <td>qty</td>
-      <td>rate</td>
-      <td>entry.gross</td>
-      <td>entry.dis</td>
-      <td>entry.net</td>
+      <th scope="row">1</th>
+      <td colspan="2">{{entryForm.value.item.name}}</td>
+      <td>{{entryForm.value.qty}}</td>
+      <td>{{entryForm.value.item.rate}}</td>
+      <td>{{entryForm.value.qty*entryForm.value.item.rate}}</td>
+      <td>{{entryForm.value.item.dis}}</td>
+      <td>{{entryForm.value.qty*entryForm.value.item.rate*(100-entryForm.value.item.dis)/100}}</td>
     </tr>
 
   </tbody>

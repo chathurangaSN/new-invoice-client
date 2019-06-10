@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-loyalty',
@@ -7,13 +8,25 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./loyalty.component.css']
 })
 export class LoyaltyComponent implements OnInit {
-  name = new FormControl('');
-  constructor() { }
+  loyaltyForm = this.fb.group(
+    {
+      id: [''],
+      name: [''],
+      type: ['']
+    }
+
+  )
+  constructor(
+    private fb: FormBuilder,
+    private router: Router
+    ) { }
 
   ngOnInit() {
   }
-  submitCustomerDetail() {
+  onSubmit() {
     console.log("in submitEntry");
+    console.log(this.loyaltyForm.value);
+    this.router.navigate(['/invoice']);
   }
 
 }

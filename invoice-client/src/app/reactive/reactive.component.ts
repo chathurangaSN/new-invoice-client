@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+// import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive',
@@ -8,7 +9,7 @@ import { FormControl } from '@angular/forms';
 })
 export class ReactiveComponent implements OnInit {
   name = new FormControl('');
-
+  // ,Validators.required
   constructor() { }
 
   ngOnInit() {
